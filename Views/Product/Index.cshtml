@@ -1,0 +1,86 @@
+﻿@model List<IGRTEC_WEBApplication_MichellAlejandroGarciaVargas.Models.ProductModel>
+
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<h1>Product List</h1>
+
+<div class="input-group mb-3">
+    <input type="text" id="searchBox" class="form-control" placeholder="Search for products..." />
+    <div class="col-auto">    
+        <select id="limitSelector" class="form-select">
+            <option value="10">Display 10</option>
+            <option value="30">Display 30</option>
+            <option value="50">Display 50</option>
+            <option value="0">Display All</option>
+        </select>
+    </div>
+</div>
+
+<a asp-action="Create" class="btn btn-success mb-3">Create New Product</a>
+
+<table class="table table-striped table-bordered">
+    <thead class="text-center">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Images</th>
+            <th colspan="2">Options</th>
+        </tr>
+    </thead>
+    <tbody id="productTableBody"></tbody>
+</table>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            const allProducts = @Html.Raw(Json.Serialize(Model));
+            let filteredProducts = allProducts;
+
+            function renderProducts(products) {
+                $('#productTableBody').empty();
+                $.each(products, function (index, product) {
+                    let productRow = `
+                                <tr>
+                                    <td class="text-center">${product.id}</td>
+                                    <td>${product.title}</td>
+                                    <td class="text-center">$${product.price}</td>
+                                    <td>${product.description}</td>
+                                    <td class="text-center">
+                                        ${product.images.map(img => `<img src="${img}" style="width: 100px; height: 100px;" />`).join('')}
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="/Product/Edit/${product.id}" class="btn btn-warning">Edit</a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="/Product/Delete/${product.id}" class="btn btn-danger">Delete</a>
+                                    </td>
+                                </tr>
+                            `;
+                    $('#productTableBody').append(productRow);
+                });
+            }
+
+            function applyFilters() {
+                const searchQuery = $('#searchBox').val().toLowerCase();
+                const limit = parseInt($('#limitSelector').
+
+                filteredProducts = allProducts.filter(product =>
+                    product.title.toLowerCase().includes(searchQuery) ||
+                    product.description.toLowerCase().includes(searchQuery)
+                );
+
+                const productsToShow = limit > 0 ? filteredProducts.slice(0, limit) : filteredProducts;
+                renderProducts(productsToShow);
+            }
+
+            $('#searchBox').on('keyup', applyFilters);
+            $('#limitSelector').on('change', applyFilters);
+            applyFilters();
+        });
+    </script>
+}
