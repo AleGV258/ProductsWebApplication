@@ -67,7 +67,7 @@
 
             function applyFilters() {
                 const searchQuery = $('#searchBox').val().toLowerCase();
-                const limit = parseInt($('#limitSelector').
+                const limit = parseInt($('#limitSelector').val(), 10);
 
                 filteredProducts = allProducts.filter(product =>
                     product.title.toLowerCase().includes(searchQuery) ||
@@ -80,6 +80,7 @@
 
             $('#searchBox').on('keyup', applyFilters);
             $('#limitSelector').on('change', applyFilters);
+
             applyFilters();
         });
     </script>

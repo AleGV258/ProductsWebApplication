@@ -365,3 +365,4 @@ C:\Users\alegv\Desktop\Pruebas-Retos\IGRTEC\IGRTEC-WEBApplication-MichellAlejand
 C:\Users\alegv\Desktop\Pruebas-Retos\IGRTEC\IGRTEC-WEBApplication-MichellAlejandroGarciaVargas\obj\Debug\net8.0\IGRTEC-WEBApplication-MichellAlejandroGarciaVargas.pdb
 C:\Users\alegv\Desktop\Pruebas-Retos\IGRTEC\IGRTEC-WEBApplication-MichellAlejandroGarciaVargas\obj\Debug\net8.0\IGRTEC-WEBApplication-MichellAlejandroGarciaVargas.genruntimeconfig.cache
 C:\Users\alegv\Desktop\Pruebas-Retos\IGRTEC\IGRTEC-WEBApplication-MichellAlejandroGarciaVargas\obj\Debug\net8.0\ref\IGRTEC-WEBApplication-MichellAlejandroGarciaVargas.dll
+C:\Users\alegv\Desktop\Pruebas-Retos\IGRTEC\IGRTEC-WEBApplication-MichellAlejandroGarciaVargas\obj\Debug\net8.0\IGRTEC-WEBApplication-MichellAlejandroGarciaVargas.sourcelink.json

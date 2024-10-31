@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IGRTEC-WEBApplication-MichellAlejandroGarciaVargas")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0df40b03ff51a461710d79006c7f0d156312c18")]
 [assembly: System.Reflection.AssemblyProductAttribute("IGRTEC-WEBApplication-MichellAlejandroGarciaVargas")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IGRTEC-WEBApplication-MichellAlejandroGarciaVargas")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
